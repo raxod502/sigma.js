@@ -30,6 +30,6 @@
     "test": "grunt travis",
     "build": "grunt build",
     "prepublish": "grunt npmPrePublish",
-    "prepare": "grunt npmPrePublish"
+    "prepare": "TMPDIR=\"${TMPDIR:-/tmp}\" grunt npmPrePublish"
   }
 }
