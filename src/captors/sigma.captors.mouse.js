@@ -109,27 +109,27 @@
             _isMoving = false;
           }, _settings('dragTimeout'));
 
-          sigma.misc.animation.killAll(_camera);
-
-          _camera.isMoving = true;
-          pos = _camera.cameraPosition(
-            sigma.utils.getX(e) - _startMouseX,
-            sigma.utils.getY(e) - _startMouseY,
-            true
-          );
-
-          x = _startCameraX - pos.x;
-          y = _startCameraY - pos.y;
-
-          if (x !== _camera.x || y !== _camera.y) {
-            _lastCameraX = _camera.x;
-            _lastCameraY = _camera.y;
-
-            _camera.goTo({
-              x: x,
-              y: y
-            });
-          }
+          // sigma.misc.animation.killAll(_camera);
+          //
+          // _camera.isMoving = true;
+          // pos = _camera.cameraPosition(
+          //   sigma.utils.getX(e) - _startMouseX,
+          //   sigma.utils.getY(e) - _startMouseY,
+          //   true
+          // );
+          //
+          // x = _startCameraX - pos.x;
+          // y = _startCameraY - pos.y;
+          //
+          // if (x !== _camera.x || y !== _camera.y) {
+          //   _lastCameraX = _camera.x;
+          //   _lastCameraY = _camera.y;
+          //
+          //   _camera.goTo({
+          //     x: x,
+          //     y: y
+          //   });
+          // }
 
           if (e.preventDefault)
             e.preventDefault();
@@ -283,19 +283,19 @@
         _self.dispatchEvent('doubleclick',
             sigma.utils.mouseCoords(e, _startMouseX, _startMouseY));
 
-        if (_settings('doubleClickEnabled')) {
-          pos = _camera.cameraPosition(
-            sigma.utils.getX(e) - sigma.utils.getCenter(e).x,
-            sigma.utils.getY(e) - sigma.utils.getCenter(e).y,
-            true
-          );
-
-          animation = {
-            duration: _settings('doubleClickZoomDuration')
-          };
-
-          sigma.utils.zoomTo(_camera, pos.x, pos.y, ratio, animation);
-        }
+        // if (_settings('doubleClickEnabled')) {
+        //   pos = _camera.cameraPosition(
+        //     sigma.utils.getX(e) - sigma.utils.getCenter(e).x,
+        //     sigma.utils.getY(e) - sigma.utils.getCenter(e).y,
+        //     true
+        //   );
+        //
+        //   animation = {
+        //     duration: _settings('doubleClickZoomDuration')
+        //   };
+        //
+        //   sigma.utils.zoomTo(_camera, pos.x, pos.y, ratio, animation);
+        // }
 
         if (e.preventDefault)
           e.preventDefault();
@@ -320,21 +320,21 @@
           wheelDelta = sigma.utils.getDelta(e);
 
       if (_settings('mouseEnabled') && _settings('mouseWheelEnabled') && wheelDelta !== 0) {
-        ratio = wheelDelta > 0 ?
-          1 / _settings('zoomingRatio') :
-          _settings('zoomingRatio');
-
-        pos = _camera.cameraPosition(
-          sigma.utils.getX(e) - sigma.utils.getCenter(e).x,
-          sigma.utils.getY(e) - sigma.utils.getCenter(e).y,
-          true
-        );
-
-        animation = {
-          duration: _settings('mouseZoomDuration')
-        };
-
-        sigma.utils.zoomTo(_camera, pos.x, pos.y, ratio, animation);
+        // ratio = wheelDelta > 0 ?
+        //   1 / _settings('zoomingRatio') :
+        //   _settings('zoomingRatio');
+        //
+        // pos = _camera.cameraPosition(
+        //   sigma.utils.getX(e) - sigma.utils.getCenter(e).x,
+        //   sigma.utils.getY(e) - sigma.utils.getCenter(e).y,
+        //   true
+        // );
+        //
+        // animation = {
+        //   duration: _settings('mouseZoomDuration')
+        // };
+        //
+        // sigma.utils.zoomTo(_camera, pos.x, pos.y, ratio, animation);
 
         if (e.preventDefault)
           e.preventDefault();
